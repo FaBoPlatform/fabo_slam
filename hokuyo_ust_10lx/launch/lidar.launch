@@ -1,0 +1,13 @@
+<launch>
+  <arg name="ip_address" />
+
+  <node name="horizontal_laser" pkg="urg_node"
+    type="urg_node" >
+    <param name="ip_address" value="$(arg ip_address)" />
+    <param name="frame_id" value="base_footprint" />
+  </node>
+
+  <node pkg="tf" type="static_transform_publisher" name="base_footprint_to_map"
+    args="0.0 0.0 0.0 0.0 0.0  0.0 /base_footprint /map 100" />
+</launch>
+

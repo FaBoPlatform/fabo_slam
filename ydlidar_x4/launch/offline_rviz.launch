@@ -1,0 +1,12 @@
+<launch>
+  <param name="/use_sim_time" value="true" />
+
+  <node 
+    name="rviz" 
+    pkg="rviz" 
+    type="rviz" 
+    required="true"
+    args="-d $(find cartographer_ros)/configuration_files/demo_2d.rviz">
+  </node>
+
+</launch>
