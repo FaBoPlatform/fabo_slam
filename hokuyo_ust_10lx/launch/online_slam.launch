@@ -15,6 +15,8 @@
 -->
 
 <launch>
+  <arg name="use_imu" default=""/>
+
   <param name="robot_description"
     textfile="$(find cartographer_ros)/urdf/backpack_2d.urdf" />
 
@@ -27,7 +29,7 @@
   <node name="cartographer_node" pkg="cartographer_ros"
       type="cartographer_node" args="
           -configuration_directory $(find hokuyo_ust_10lx)/configuration_files
-          -configuration_basename lidar.lua"
+          -configuration_basename lidar$(arg use_imu).lua"
       output="screen">
     <remap from="echoes" to="horizontal_laser_2d" />
   </node>

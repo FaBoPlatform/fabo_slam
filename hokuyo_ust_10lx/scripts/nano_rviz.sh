@@ -19,11 +19,17 @@ case $1 in
         INPUT_YAML=$PWD/$1
 esac
 
+if "${USE_IMU}"; then
+  IMU="_imu"
+else
+  IMU=""
+fi
+
 
 if [ ! -z $INPUT_YAML ]; then
-  # map_server version
+  # map_server version. need imu.
   roslaunch turtlebot3_navigation turtlebot3_navigation_rosmap.launch map_file:=$INPUT_YAML
 elif [ ! -z $INPUT_PBSTREAM ]; then
   # cartgrapher version
-  roslaunch turtlebot3_navigation turtlebot3_navigation_pbstream.launch load_state_filename:=$INPUT_PBSTREAM
+  roslaunch turtlebot3_navigation turtlebot3_navigation_pbstream.launch load_state_filename:=$INPUT_PBSTREAM use_imu:=${IMU}
 fi

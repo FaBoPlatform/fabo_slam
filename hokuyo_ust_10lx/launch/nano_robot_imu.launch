@@ -1,0 +1,15 @@
+<launch>
+  <arg name="set_lidar_frame_id" default="base_footprint" />
+  <arg name="ip_address" />
+
+  <include file="$(find hokuyo_ust_10lx)/launch/lidar.launch">
+    <arg name="ip_address" value="$(arg ip_address)" />
+  </include>
+
+  <include file="$(find razor_imu_9dof)/launch/imu.launch" />
+
+  <node pkg="turtlebot3_bringup" type="turtlebot3_diagnostics" name="turtlebot3_diagnostics" output="screen">
+    <remap from="base_footprint" to="base_scan" />
+  </node>
+</launch>
+

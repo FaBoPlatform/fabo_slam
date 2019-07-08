@@ -5,3 +5,4 @@ HOKUYO_UST_10LX=192.168.0.10
 export ROS_MASTER_URI=http://$MASTER_IP:11311
 export ROS_IP=$CLIENT_IP
 
+export USE_IMU=false # Use hardware IMU or not. true or false
