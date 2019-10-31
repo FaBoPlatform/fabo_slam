@@ -189,8 +189,8 @@ Install Arduino IDE on Linux PC.<br>
 [https://www.arduino.cc/en/Main/Software](https://www.arduino.cc/en/Main/Software)
 
 ```
-tar fx arduino-1.8.9-linux64.tar.xz
-cd arduino-1.8.9
+tar fx arduino-1.8.10-linux64.tar.xz
+cd arduino-1.8.10
 ./install.sh
 ```
 
@@ -227,9 +227,9 @@ https://raw.githubusercontent.com/sparkfun/Arduino_Boards/master/IDE_Board_Manag
 ```
 (Arduino IDE)Tools->Boads Manager:
 ```
-Arduino AVR Boards Built-in by Arduino version 1.6.23
-Arduino SAMD Boards (32-bits ARM Coretex-M0+) by Arduino version 1.8.2
-SparkFun SAMD Boards (dependency: Arduino SAMD Boards 1.8.1) by SparkFun Electronics version 1.6.2
+Arduino AVR Boards Built-in by Arduino version 1.8.1
+Arduino SAMD Boards (32-bits ARM Coretex-M0+) by Arduino version 1.8.4
+SparkFun SAMD Boards (dependency: Arduino SAMD Boards 1.8.1) by SparkFun Electronics version 1.7.1
 ```
 (Arduino IDE)Tools->Board:
 ```
@@ -276,7 +276,7 @@ java.io.IOException: Cannot run program "{runtime.tools.openocd-0.9.0-arduino6-s
 Avoid this bug first.
 
 ```
-vi ~/.arduino15/packages/SparkFun/hardware/samd/1.6.2/platform.txt
+vi ~/.arduino15/packages/SparkFun/hardware/samd/1.7.1/platform.txt
 ```
 before:
 ```
@@ -289,7 +289,7 @@ tools.openocd.path={runtime.tools.openocd-0.10.0-arduino7.path}
 
 Hint:
 ```
-less ~/.arduino15/packages/arduino/hardware/samd/1.8.2/platform.txt
+less ~/.arduino15/packages/arduino/hardware/samd/1.8.4/platform.txt
 ```
 
 ##### Write Firmware
