@@ -1,14 +1,14 @@
 # Install
 
 1. Install ROS<br>
-2. Install Cartographer-ROS (master branch. not v1.0.0)<br>
+2. Install Cartographer-ROS (use master branch. not v1.0.0)<br>
 3. Install FaBo SLAM<br>
 4. Install LIDAR Drivers<br>
 5. Install Turtlebot3 (Optional)<br>
 6. Install SparkFun 9DoF Razor IMU M0 (SEN-14001) (Optional)<br>
 
 ## 1. Install ROS Melodic
-[http://wiki.ros.org/melodic/Installation/Ubuntu](http://wiki.ros.org/melodic/Installation/Ubutbontu)
+[http://wiki.ros.org/melodic/Installation/Ubuntu](http://wiki.ros.org/melodic/Installation/Ubuntu)
 ```
 sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
 sudo apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net:80 --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
@@ -137,9 +137,9 @@ catkin_make_isolated --install --use-ninja
 
 ## 4. Install LIDAR Drivers
 ### YDLIDAR X4
-![Install YDLIDAR ROS Driver](ydlidar.md)
+[Install YDLIDAR ROS Driver](ydlidar.md)
 ### Hokuyo UST-10LX
-![Install Hokuyo ROS Driver](hokuyo.md)
+[Install Hokuyo ROS Driver](hokuyo.md)
 
 
 ## 5. Install Turtlebot3
@@ -186,7 +186,7 @@ SEN-14001 cannot use with ROS. It needs firmware update.<br>
 
 #### Download Arduino IDE
 Install Arduino IDE on Linux PC.<br>
-![https://www.arduino.cc/en/Main/Software](https://www.arduino.cc/en/Main/Software)
+[https://www.arduino.cc/en/Main/Software](https://www.arduino.cc/en/Main/Software)
 
 ```
 tar fx arduino-1.8.9-linux64.tar.xz
@@ -212,7 +212,7 @@ rm FlashStorage.zip
 
 #### Write Firmware
 SparkFun official document:<br>
-![https://learn.sparkfun.com/tutorials/9dof-razor-imu-m0-hookup-guide](https://learn.sparkfun.com/tutorials/9dof-razor-imu-m0-hookup-guide)
+[https://learn.sparkfun.com/tutorials/9dof-razor-imu-m0-hookup-guide](https://learn.sparkfun.com/tutorials/9dof-razor-imu-m0-hookup-guide)
 
 ##### Launch Arduino IDE
 Connect SEN-14001 and PC with micro USB cable.
