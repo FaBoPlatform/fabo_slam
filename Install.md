@@ -168,5 +168,6 @@ cp hokuyo_ust_10lx/extras/turtlebot3_navigation_rosmap.launch ~/catkin_ws/instal
 
 ## 6. Install SparkFun 9DoF Razor IMU M0 (SEN-14001)
 Optional.
+
 [Install SparkFun 9DoF Razor IMU M0 (SEN-14001)](sen-14001.md)
 
