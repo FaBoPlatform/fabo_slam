@@ -17,6 +17,14 @@ source /home/ubuntu/catkin_ws/install_isolated/setup.bash
 roscore &
 sleep 5 # wait until roscore launch
 roslaunch ydlidar ydlidar_x4.launch &
-sleep 5 # wait until lidar launch
-roslaunch ydlidar_x4 online_localization.launch load_state_filename:=${INPUT_PB}
+
+if "${USE_IMU}"; then
+  roslaunch razor_imu_9dof imu.launch&
+  sleep 20 # wait until imu launch
+  IMU="_imu"
+else
+  sleep 5 # wait until lidar launch
+  IMU=""
+fi
+roslaunch ydlidar_x4 online_localization.launch load_state_filename:=${INPUT_PB} use_imu:=${IMU}
 

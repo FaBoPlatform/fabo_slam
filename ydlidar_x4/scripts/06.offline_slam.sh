@@ -17,7 +17,14 @@ source /home/ubuntu/catkin_ws/install_isolated/setup.bash
 
 roscore &
 sleep 5 # wait until roscore launch
-roslaunch ydlidar_x4 offline_slam.launch bag_filenames:=${INPUT_BAG}
+
+if "${USE_IMU}"; then
+  IMU="_imu"
+else
+  IMU=""
+fi
+
+roslaunch ydlidar_x4 offline_slam.launch bag_filenames:=${INPUT_BAG} use_imu:=${IMU}
 
 rosservice call /write_state ${INPUT_BAG}.pbstream
 

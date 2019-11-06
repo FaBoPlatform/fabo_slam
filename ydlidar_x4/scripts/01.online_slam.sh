@@ -12,14 +12,22 @@ esac
 roscore &
 sleep 5 # wait until roscore launch
 roslaunch ydlidar ydlidar_x4.launch &
-sleep 5 # wait until roscore launch
+
+if "${USE_IMU}"; then
+  roslaunch razor_imu_9dof imu.launch &
+  sleep 20 # wait until imu launch
+  IMU="_imu"
+else
+  sleep 5 # wait until lidar launch
+  IMU=""
+fi
 
 if [ -z ${OUTPUT_BAG} ]; then
     # ${OUTPUT_BAG} is empty.
-    roslaunch ydlidar_x4 online_slam.launch
+    roslaunch ydlidar_x4 online_slam.launch use_imu:=${IMU}
 else
     # Save to rosbag.
-    roslaunch ydlidar_x4 online_slam.launch &
+    roslaunch ydlidar_x4 online_slam.launch use_imu:=${IMU}&
     sleep 5
     rosrun rosbag record -a -O $OUTPUT_BAG
 fi
