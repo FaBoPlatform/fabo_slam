@@ -189,3 +189,5 @@ rosparam set /test_optim_node/enable_homotopy_class_planning False
 roslaunch teb_local_planner test_optim_node.launch
 ```
 When you long click the black circle, you can move box object.
+
+See also:[Set up and test Optimization](http://wiki.ros.org/teb_local_planner/Tutorials/Setup%20and%20test%20Optimization)
