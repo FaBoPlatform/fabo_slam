@@ -13,7 +13,7 @@
 -- limitations under the License.
 
 options = {
-  tracking_frame = "laser",
+  tracking_frame = "base_link",
   pipeline = {
     {
       action = "min_max_range_filter",

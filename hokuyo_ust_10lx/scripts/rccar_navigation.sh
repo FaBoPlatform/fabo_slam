@@ -1,0 +1,3 @@
+#roslaunch teb_local_planner_tutorials robot_diff_drive_in_stage.launch
+roslaunch fabo_slam rccar_navigation.launch
+

@@ -17,7 +17,7 @@
   <node name="cartographer_node" pkg="cartographer_ros"
       type="cartographer_node" args="
           -configuration_directory $(find hokuyo_ust_10lx)/configuration_files
-          -configuration_basename online_localization$(arg use_imu)lua
+          -configuration_basename online_localization$(arg use_imu).lua
           -load_state_filename $(arg load_state_filename)"
       output="screen">
     <remap from="echoes" to="horizontal_laser_2d" />

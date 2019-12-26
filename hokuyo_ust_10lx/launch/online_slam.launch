@@ -23,8 +23,9 @@
   <node name="robot_state_publisher" pkg="robot_state_publisher"
     type="robot_state_publisher" />
 
-  <node pkg="tf" type="static_transform_publisher" name="laser_to_map"
-    args="0.0 0.0 0.0 0.0 0.0  0.0 /laser /map 100" />
+  <node pkg="tf" type="static_transform_publisher" name="map_to_odom"
+    args="0.0 0.0 0.0 0.0 0.0  0.0 /map /odom 100" />
+
 
   <node name="cartographer_node" pkg="cartographer_ros"
       type="cartographer_node" args="
@@ -33,9 +34,6 @@
       output="screen">
     <remap from="echoes" to="horizontal_laser_2d" />
   </node>
-
-  <node pkg="tf" type="static_transform_publisher" name="base_footprint_to_map"
-    args="0.0 0.0 0.0 0.0 0.0  0.0 /base_footprint /map 100" />
 
 
   <node name="cartographer_occupancy_grid_node" pkg="cartographer_ros"
