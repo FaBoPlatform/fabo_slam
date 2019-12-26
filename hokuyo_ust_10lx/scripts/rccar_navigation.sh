@@ -1,3 +1,5 @@
+source bash_export
+
 #roslaunch teb_local_planner_tutorials robot_diff_drive_in_stage.launch
 roslaunch hokuyo_ust_10lx rccar_navigation.launch
 
