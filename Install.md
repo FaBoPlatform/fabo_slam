@@ -6,6 +6,7 @@
 4. Install LIDAR Drivers<br>
 5. Install Turtlebot3 (Optional)<br>
 6. Install SparkFun 9DoF Razor IMU M0 (SEN-14001) (Optional)<br>
+7. Install Teb Local Planner (Optional)<br>
 
 ## 1. Install ROS Melodic
 [http://wiki.ros.org/melodic/Installation/Ubuntu](http://wiki.ros.org/melodic/Installation/Ubuntu)
@@ -171,3 +172,20 @@ Optional.
 
 [Install SparkFun 9DoF Razor IMU M0 (SEN-14001)](sen-14001.md)
 
+## 7. Install Teb Local Planner
+Optional.
+
+* Not required. Only when using autonomous rc car.
+
+```
+sudo apt-get install -y ros-melodic-teb-local-planner
+sudo apt-get install -y ros-melodic-teb-local-planner-tutorials
+```
+
+Check.
+```
+roscore &
+rosparam set /test_optim_node/enable_homotopy_class_planning False
+roslaunch teb_local_planner test_optim_node.launch
+```
+When you long click the black circle, you can move box object.
