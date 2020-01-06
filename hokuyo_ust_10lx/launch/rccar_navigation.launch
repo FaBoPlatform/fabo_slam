@@ -20,8 +20,8 @@ base file: /opt/ros/melodic/share/teb_local_planner_tutorials/launch/robot_diff_
 
         <!--  ************** Navigation ***************  -->
 	<node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
-  	  	<rosparam file="$(find teb_local_planner_tutorials)/cfg/diff_drive/costmap_common_params.yaml" command="load" ns="global_costmap" />
-  	 	<rosparam file="$(find teb_local_planner_tutorials)/cfg/diff_drive/costmap_common_params.yaml" command="load" ns="local_costmap" />
+  	  	<rosparam file="$(find hokuyo_ust_10lx)/configuration_files/costmap_common_params.yaml" command="load" ns="global_costmap" />
+  	 	<rosparam file="$(find hokuyo_ust_10lx)/configuration_files/costmap_common_params.yaml" command="load" ns="local_costmap" />
   		<rosparam file="$(find teb_local_planner_tutorials)/cfg/diff_drive/local_costmap_params.yaml" command="load" />
   		<rosparam file="$(find teb_local_planner_tutorials)/cfg/diff_drive/global_costmap_params.yaml" command="load" />
   		<rosparam file="$(find teb_local_planner_tutorials)/cfg/diff_drive/teb_local_planner_params.yaml" command="load" />
@@ -49,7 +49,8 @@ base file: /opt/ros/melodic/share/teb_local_planner_tutorials/launch/robot_diff_
 		<param name="initial_pose_a"            value="0"/>
 	</node>
 
+        <?ignore
 	  <!--  **************** Visualisation ****************  -->
 	  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find teb_local_planner_tutorials)/cfg/rviz_navigation.rviz"/>
-
+        ?>
 </launch>
