@@ -9,6 +9,12 @@ base file: /opt/ros/melodic/share/teb_local_planner_tutorials/launch/robot_diff_
   - rviz view
  -->
 <launch>
+        <!-- Arguments -->
+        <arg name="scan_topic"     default="scan_matched_points2"/>
+        <arg name="initial_pose_x" default="0.355"/>
+        <arg name="initial_pose_y" default="-0.145"/>
+        <arg name="initial_pose_a" default="0.0"/>
+
 
         <!--  ************** Global Parameters ***************  -->
         <param name="/use_sim_time" value="false"/>
@@ -22,9 +28,9 @@ base file: /opt/ros/melodic/share/teb_local_planner_tutorials/launch/robot_diff_
 	<node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
   	  	<rosparam file="$(find hokuyo_ust_10lx)/configuration_files/costmap_common_params.yaml" command="load" ns="global_costmap" />
   	 	<rosparam file="$(find hokuyo_ust_10lx)/configuration_files/costmap_common_params.yaml" command="load" ns="local_costmap" />
-  		<rosparam file="$(find teb_local_planner_tutorials)/cfg/diff_drive/local_costmap_params.yaml" command="load" />
-  		<rosparam file="$(find teb_local_planner_tutorials)/cfg/diff_drive/global_costmap_params.yaml" command="load" />
-  		<rosparam file="$(find teb_local_planner_tutorials)/cfg/diff_drive/teb_local_planner_params.yaml" command="load" />
+  		<rosparam file="$(find hokuyo_ust_10lx)/configuration_files/local_costmap_params.yaml" command="load" />
+  		<rosparam file="$(find hokuyo_ust_10lx)/configuration_files/global_costmap_params.yaml" command="load" />
+  		<rosparam file="$(find hokuyo_ust_10lx)/configuration_files/teb_local_planner_params.yaml" command="load" />
 
 		<param name="base_global_planner" value="global_planner/GlobalPlanner" />
 		<param name="planner_frequency" value="1.0" />
@@ -42,11 +48,13 @@ base file: /opt/ros/melodic/share/teb_local_planner_tutorials/launch/robot_diff_
 	</node> ?>
 
 	<node pkg="amcl" type="amcl" name="amcl" output="screen">
-		<rosparam file="$(find teb_local_planner_tutorials)/cfg/amcl_params.yaml" command="load" />
+		<rosparam file="$(find hokuyo_ust_10lx)/configuration_files/amcl_params.yaml" command="load" />
+                
+		<param name="initial_pose_x"            value="$(arg initial_pose_x)"/>
+		<param name="initial_pose_y"            value="$(arg initial_pose_y)"/>
+		<param name="initial_pose_a"            value="$(arg initial_pose_a)"/>
+		<remap from="scan"                      to="$(arg scan_topic)"/>
 
-	        <param name="initial_pose_x"            value="2"/>
-		<param name="initial_pose_y"            value="2"/>
-		<param name="initial_pose_a"            value="0"/>
 	</node>
 
         <?ignore
