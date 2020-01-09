@@ -23,10 +23,6 @@
   <node name="robot_state_publisher" pkg="robot_state_publisher"
     type="robot_state_publisher" />
 
-  <node pkg="tf" type="static_transform_publisher" name="map_to_odom"
-    args="0.0 0.0 0.0 0.0 0.0  0.0 /map /odom 100" />
-
-
   <node name="cartographer_node" pkg="cartographer_ros"
       type="cartographer_node" args="
           -configuration_directory $(find hokuyo_ust_10lx)/configuration_files

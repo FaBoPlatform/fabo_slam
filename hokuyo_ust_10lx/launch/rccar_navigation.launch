@@ -10,7 +10,7 @@ base file: /opt/ros/melodic/share/teb_local_planner_tutorials/launch/robot_diff_
  -->
 <launch>
         <!-- Arguments -->
-        <arg name="scan_topic"     default="scan_matched_points2"/>
+        <arg name="scan_topic"     default="scan"/>
         <arg name="initial_pose_x" default="0.355"/>
         <arg name="initial_pose_y" default="-0.145"/>
         <arg name="initial_pose_a" default="0.0"/>
