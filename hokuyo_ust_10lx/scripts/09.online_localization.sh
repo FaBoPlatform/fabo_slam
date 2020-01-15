@@ -22,7 +22,7 @@ roslaunch hokuyo_ust_10lx lidar.launch ip_address:=$HOKUYO_UST_10LX &
 if "${USE_IMU}"; then
   roslaunch razor_imu_9dof imu.launch &
   sleep 20 # wait until imu launch
-  IMU="_IMU"
+  IMU="_imu"
 else
   sleep 5 # wait until lidar launch
   IMU=""
