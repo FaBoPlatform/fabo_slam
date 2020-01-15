@@ -90,7 +90,7 @@ vi ~/catkin_ws/src/ydlidar/launch/ydlidar_x4.launch
 -    <param name="baudrate"     type="int"    value="115200"/>
 -    <param name="frame_id"     type="string" value="laser_frame"/>
 +    <param name="baudrate"     type="int"    value="128000"/>
-+    <param name="frame_id"     type="string" value="base_footprint"/>
++    <param name="frame_id"     type="string" value="base_laser_link"/>
      <param name="low_exposure"  type="bool"   value="false"/>
      <param name="resolution_fixed"    type="bool"   value="true"/>
      <param name="auto_reconnect"    type="bool"   value="true"/>
@@ -108,8 +108,13 @@ vi ~/catkin_ws/src/ydlidar/launch/ydlidar_x4.launch
    </node>
 -  <node pkg="tf" type="static_transform_publisher" name="base_link_to_laser4"
 -    args="0.2245 0.0 0.2 0.0 0.0  0.0 /base_footprint /laser_frame 40" />
-+  <node pkg="tf" type="static_transform_publisher" name="base_footprint_to_map"
-+    args="0.0 0.0 0.0 0.0 0.0  0.0 /base_footprint /map 100" />
++  <node pkg="tf" type="static_transform_publisher" name="odom_to_base_footprint"
++    args="0.0 0.0 0.0  0.0 0.0 0.0 /odom /base_footprint 100" />
++  <node pkg="tf" type="static_transform_publisher" name="base_footprint_to_base_link"
++    args="0.0 0.0 0.0  0.0 0.0 0.0 /base_footprint /base_link 100" />
++  <node pkg="tf" type="static_transform_publisher" name="base_link_to_base_laser_link"
++    args="0.0 0.0 0.0  0.0 0.0 0.0 /base_link /base_laser_link 100" />
+
  </launch>
 ```
 
