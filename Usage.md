@@ -4,7 +4,8 @@
 2. online SLAM (save to rosbag. save to pbstream)<br>
 3. offline SLAM (use rosbag. save to pbstream)<br>
 4. online Localization (use pbstream)<br>
-5. Other<br>
+5. navigation<br>
+6. Other<br>
 
 online is realtime processing with YDLIDAR X4.<br>
 offline is using rosbag play.<br>
@@ -123,8 +124,26 @@ You need `myroom.bag` and `myroom.bag.pbstream`.<br>
 ```
 Output: `myroiom.bag_map.pgm` and `myroom.bag_map.yaml`
 
+## 5. navigation
+Requirements: Teb Local Planner<br>
 
-## 5. Other
+on Car(Jetson Nano)
+```
+./09.online_localization.sh myroom.bag.pbstream
+```
+
+on PC
+```
+cd ~/catkin_ws/src/fabo_slam/(lidar)scripts/
+#terminal 1
+./rccar_navigation.sh
+#terminal 2
+./rccar_rviz.sh
+```
+And set 2D Nav Goal on RViz.
+
+
+## 6. Other
 ### Save lidar to rosbag
 ```
 cd ~/catkin_ws/src/fabo_slam/(lidar)scripts/

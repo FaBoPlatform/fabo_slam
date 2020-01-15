@@ -178,8 +178,10 @@ Optional.
 * Not required. Only when using autonomous rc car.
 
 ```
+sudo apt-get install -y ros-melodic-map-server ros-melodic-amcl ros-melodic-move-base
 sudo apt-get install -y ros-melodic-teb-local-planner
 sudo apt-get install -y ros-melodic-teb-local-planner-tutorials
+sudo apt-get install -y ros-melodic-ackermann-msgs
 ```
 
 Check.
