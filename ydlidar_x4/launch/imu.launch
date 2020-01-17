@@ -1,0 +1,11 @@
+<launch>
+  <arg name="razor_config_file" default="$(find razor_imu_9dof/)/config/my_razor.yaml"/>
+  <node pkg="razor_imu_9dof" type="my_imu_node.py" name="imu_node" output="screen">
+    <rosparam file="$(arg razor_config_file)" command="load"/>
+  </node>
+
+  <!-- flip and 180 deg rotate -->
+  <node pkg="tf" type="static_transform_publisher" name="base_link_to_imu_link"
+    args="0.0 0.0 0.0 3.14159 0.0 3.14159 /base_link /imu_link 100" />
+
+</launch>
