@@ -113,7 +113,7 @@ vi ~/catkin_ws/src/ydlidar/launch/ydlidar_x4.launch
 +  <node pkg="tf" type="static_transform_publisher" name="base_footprint_to_base_link"
 +    args="0.0 0.0 0.0  0.0 0.0 0.0 /base_footprint /base_link 100" />
 +  <node pkg="tf" type="static_transform_publisher" name="base_link_to_base_laser_link"
-+    args="0.0 0.0 0.0  0.0 0.0 0.0 /base_link /base_laser_link 100" />
++    args="0.0 0.0 0.0  3.14159 0.0 0.0 /base_link /base_laser_link 100" />
 
  </launch>
 ```
